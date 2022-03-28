@@ -151,18 +151,7 @@ $(document).ready(function() {
 									$('#publish').remove();
 									// This controls allows us to override the global room bitrate cap
 									$('#bitrate').parent().parent().removeClass('hide').show();
-									$('#bitrate a').click(function() {
-										var id = $(this).attr("id");
-										var bitrate = parseInt(id)*1000;
-										if(bitrate === 0) {
-											Janus.log("Not limiting bandwidth via REMB");
-										} else {
-											Janus.log("Capping bandwidth to " + bitrate + " via REMB");
-										}
-										$('#bitrateset').html($(this).html() + '<span class="caret"></span>').parent().removeClass('open');
-										sfutest.send({ message: { request: "configure", bitrate: bitrate }});
-										return false;
-									});
+									sfutest.send({ message: { request: "configure", bitrate: 0 }});
 								},
 								onmessage: function(msg, jsep) {
 									Janus.debug(" ::: Got a message (publisher) :::", msg);
