@@ -377,6 +377,8 @@ function checkEnter(field, event) {
 
 function registerUsername() {
 	setTimeout(function() {
+		// check is show
+		if($('#registernow').modal('hide').length < 1) return;
 		$('#username').val(Date.now());
 		if($('#username').length === 0) {
 			// Create fields to register
@@ -412,7 +414,7 @@ function registerUsername() {
 			myusername = escapeXmlTags(username);
 			sfutest.send({ message: register });
 		}
-	}, 1000);
+	}, 100);
 }
 
 function publishOwnFeed(useAudio) {
