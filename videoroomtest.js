@@ -47,7 +47,9 @@ if(window.location.protocol === 'http:')
     // server = 'http://techainer-rtx3090-2.localdomain:8088/janus';
 	// server = 'http://192.168.40.4:8088/janus';
     server = "http://192.168.40.4:30888/janus"
+    // server = "http://192.168.40.4:30088/janus"
     // server = "https://horus.tunnel.techainer.com/janus"
+    // server = "https://janus.service.kylenguyen.tokyo/janus"
 	// server = "http://" + window.location.hostname + ":8088/janus";
 else
     // server = 'http://techainer-rtx3090-2.localdomain:8089/janus';
@@ -403,7 +405,7 @@ function registerUsername() {
 			myusername = escapeXmlTags(username);
 			sfutest.send({ message: register });
 		}
-	}, 100);
+	}, 2000);
 }
 
 function publishOwnFeed(useAudio) {
